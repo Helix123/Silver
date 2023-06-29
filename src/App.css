@@ -1,38 +1,184 @@
-.App {
-  text-align: center;
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  overflow: overlay;
+  position: relative; /* Make body a positioned container */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body::-webkit-scrollbar {
+  width: 8px;
+  position: absolute;
+  right: 10px;
+  background-color: transparent;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body::-webkit-scrollbar-thumb {
+  background: lightgray;
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-corner {
+  border-radius: 10px;
+}
+
+/* CSS for ChatApp component */
+
+.chat-container {
   display: flex;
   flex-direction: column;
+  text-align: center;
+  height: calc(100% - 60px); /* Adjust the height based on chat input height */
+  overflow: hidden; /* Hide the scroll in chat area */
+}
+
+.chat-messages {
+  padding: 10px;
+  margin-bottom: 49px; /* Adjust the margin based on chat input height */
+}
+
+.message-container {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.user-message-container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+}
+
+.ai-message-container {
+  justify-content: flex-start;
+}
+
+.pfp {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.pfp img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.user-pfp {
+  margin-left: 10px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.user-pfp img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.message {
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 1.4;
+  max-width: 75%;
+}
+
+.user-message {
+  background-color: #6d55ff;
+  color: #fff;
+  align-self: flex-end;
+}
+
+.ai-message {
+  background-color: #f1f1f1;
+  color: #000;
+  align-self: flex-start;
+}
+
+.typing-indicator {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.typing-indicator span {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin-right: 4px;
+  animation: typing-animation 1s infinite;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes typing-animation {
+  0% {
+    opacity: 0.3;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+.chat-input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #000000;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.chat-input input {
+  flex-grow: 1;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin-right: 10px;
+  background-color: #0d0d0c;
+  color: #ffffff;
+}
+
+.chat-input button {
+  background-color: #6d55ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-right: 19px;
+}
+
+.centered-container {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .chat-messages {
+    margin-bottom: 58px; /* Adjust the margin based on chat input height */
   }
 }
