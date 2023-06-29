@@ -6,13 +6,7 @@ import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCC90fMllBTQglRS_UWVvVWYWe62J03Tc8",
-  authDomain: "silver-wolf-a9757.firebaseapp.com",
-  projectId: "silver-wolf-a9757",
-  storageBucket: "silver-wolf-a9757.appspot.com",
-  messagingSenderId: "779020768815",
-  appId: "1:779020768815:web:ec16159962674bea6ad8da",
-  measurementId: "G-G5NFGLVM6B"
+  //firebase config here
 };
 
 // Initialize Firebase
@@ -21,7 +15,7 @@ firebase.initializeApp(firebaseConfig);
 const firestore = firebase.firestore();
 
 const configuration = new Configuration({
-  apiKey: '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',
+  apiKey: 'api key here',
 });
 const openai = new OpenAIApi(configuration);
 
