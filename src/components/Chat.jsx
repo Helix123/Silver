@@ -19,7 +19,7 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-const ChatApp = () => {
+const Chat = () => {
   const [messages, setMessages] = useState([]);
   const [inputText, setInputText] = useState('');
   const [userProfilePicture, setUserProfilePicture] = useState('');
@@ -227,4 +227,4 @@ const ChatApp = () => {
   );
 };
 
-export default ChatApp;
+export default Chat;
